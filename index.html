@@ -1,1 +1,330 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ариунзул ❤️</title>
 
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    color:white;
+    text-align:center;
+}
+
+.section{
+    padding:60px 20px;
+}
+
+h1,h2{
+    margin:20px 0;
+}
+
+.btn{
+    padding:15px 25px;
+    border:none;
+    border-radius:15px;
+    margin:10px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+.yes{
+    background:white;
+    color:#e91e63;
+}
+
+.option{
+    background:#ffffff33;
+    color:white;
+}
+
+.timer{
+    font-size:28px;
+    line-height:1.8;
+}
+
+.selected{
+    background:#e91e63;
+}
+
+.heart{
+    position:fixed;
+    top:-50px;
+    font-size:30px;
+    animation:fall 5s linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="section">
+
+<h1>Сайн уу, Ариунзул ❤️</h1>
+
+<p style="font-size:22px;line-height:1.8;">
+2022 оны 9 сарын 1-ний өдөр оюутны ширээнд анх хөл тавьж байхдаа би чамайг анх харж билээ.
+Тэр үед энэ учрал миний амьдралыг ингэж өөрчилнө гэж төсөөлөө ч үгүй.
+Гэхдээ тэр өдрөөс хойш чи миний амьдралын хамгийн онцгой хүн болсон.
+</p>
+
+<h2>❤️ Бид үерхэж эхэлснээс хойш</h2>
+
+<div class="timer" id="timer"></div>
+
+</div>
+<div class="section">
+
+<p style="font-size:22px;line-height:1.8;">
+Хүн аалз шиг би өнгөрснөө өөрчилж чадахгүй.
+Нэгэнт чамайг алдаж, ямар их үгүйлж болдгийг мэдэрсэн болохоор энэ удаа би чамайг хэзээ ч ганцааранг нь орхихыг хүсэхгүй байна.
+
+Ирээдүйгээ хэрхэн бүтээхээ би өөрөө сонгож чадна,
+тиймээс ямар ч үед би чамайг илүү чанга атгаж,
+илүү нандин хайрлаж,
+үргэлж чамайг л сонгоно.
+
+Учир нь чи миний хамгийн нандин мэдрэмж.
+
+Өнөөдөр ч, маргааш ч, үргэлж чамтай минь цуг. ❤️
+</p>
+
+<h2>
+🌹 Ариунзул минь,
+<br><br>
+Энэ Хагас сайн өдөр
+надтай болзоонд явах уу?
+</h2>
+
+<button class="btn yes" onclick="showOptions()">
+Тийм ээ 🥰
+</button>
+
+</div>
+
+
+<div class="section" id="options" style="display:none;">
+
+<h2>
+Тэгвэл юу хийхээ чи өөрөө сонгоорой.
+<br>
+(Заавал 3-ыг сонгоно 😊)
+</h2>
+
+<button class="btn option" onclick="selectOption(this)">
+🎬 Кино үзэх
+</button>
+
+<button class="btn option" onclick="selectOption(this)">
+🍝 Хоолонд орох
+</button>
+
+<button class="btn option" onclick="selectOption(this)">
+🚶 Хамт алхах
+</button>
+
+<button class="btn option" onclick="selectOption(this)">
+🎱 Биллиард тоглох
+</button>
+
+<button class="btn option" onclick="selectOption(this)">
+🎡 Парк дээр тоглох
+</button>
+
+<button class="btn option" onclick="selectOption(this)">
+🎁 Гэнэтийн бэлэг
+</button>
+
+<button class="btn option" onclick="selectOption(this)">
+💕 Хос шивээс хийлгэх
+</button>
+
+<h3 id="counter">
+0 / 3 сонгосон
+</h3>
+
+</div>
+<div class="section" id="finalSection" style="display:none;">
+
+    <h1>❤️ Болзоо батлагдлаа ❤️</h1>
+
+    <h2>
+        Хагас сайн өдөр уулзъя. 🥰
+    </h2>
+
+    <p style="font-size:22px;">
+        Чамтай өнгөрүүлэх ямар ч өдөр
+        миний хувьд хамгийн сайхан болзоо байдаг.
+    </p>
+
+    <button class="btn yes" onclick="showLetter()">
+        Дараах ❤️
+    </button>
+
+</div>
+
+
+<div class="section" id="letterSection" style="display:none;">
+
+    <h2>💌</h2>
+
+    <p style="font-size:22px; line-height:1.8;">
+        Супер хүчтэй байх албагүй юм байна гэдгийг
+        чи надад ойлгуулсан.
+
+        Учир нь миний хувьд хамгийн үнэ цэнтэй зүйл бол
+        чиний инээмсэглэл,
+        чиний халамж,
+        чиний хажууд өнгөрүүлэх энгийн мөчүүд юм.
+
+        Хэрэв амьдралыг дахин эхлүүлэх боломж олдвол
+        би дахин чамайг л хайж,
+        дахин чамд дурлаж,
+        дахин чамайг хайрлах болно.
+
+        Яагаад гэвэл энэ зүрхэнд минь
+        чамтай адилхан хүн хэзээ ч байхгүй.
+
+        🕷️🫶
+        <br><br>
+
+        Ямар ч ертөнцөд,
+        ямар ч сонголтын өмнө байсан ч
+        би үргэлж чамайг л сонгоно.
+
+        Учир нь чи миний хамгийн нандин мэдрэмж.
+
+        Үргэлж чамдаа хайртай. ❤️
+    </p>
+
+</div>
+<script>
+
+// ❤️ Timer
+const startDate = new Date("2026-05-16T00:00:00");
+
+function updateTimer(){
+
+    const now = new Date();
+
+    const diff = Math.abs(now - startDate);
+
+    const totalSeconds = Math.floor(diff / 1000);
+
+    const days = Math.floor(totalSeconds / (60 * 60 * 24));
+
+    const hours = Math.floor(
+        (totalSeconds % (60 * 60 * 24)) / (60 * 60)
+    );
+
+    const minutes = Math.floor(
+        (totalSeconds % (60 * 60)) / 60
+    );
+
+    const seconds = totalSeconds % 60;
+
+    document.getElementById("timer").innerHTML =
+        `❤️ ${days} өдөр<br>
+         🕐 ${hours} цаг<br>
+         ⏰ ${minutes} минут<br>
+         ⌛ ${seconds} секунд`;
+}
+
+updateTimer();
+
+setInterval(updateTimer, 1000);
+
+
+// ❤️ Болзооны сонголтуудыг харуулах
+function showOptions(){
+
+    document.getElementById("options").style.display = "block";
+
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+    });
+}
+
+
+// ❤️ 3 сонголт хийх
+let selectedCount = 0;
+
+function selectOption(button){
+
+    if(button.classList.contains("selected")){
+        return;
+    }
+
+    button.classList.add("selected");
+
+    selectedCount++;
+
+    document.getElementById("counter").innerHTML =
+        selectedCount + " / 3 сонгосон";
+
+    if(selectedCount === 3){
+
+        document.getElementById("finalSection").style.display = "block";
+
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
+    }
+}
+
+
+// ❤️ Захидлыг харуулах
+function showLetter(){
+
+    document.getElementById("letterSection").style.display = "block";
+
+    createHearts();
+
+    window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: "smooth"
+    });
+}
+
+
+// ❤️ Зүрхнүүд унагах
+function createHearts(){
+
+    for(let i = 0; i < 40; i++){
+
+        const heart = document.createElement("div");
+
+        heart.innerHTML = "❤️";
+
+        heart.className = "heart";
+
+        heart.style.left = Math.random() * 100 + "vw";
+
+        heart.style.animationDuration =
+            (3 + Math.random() * 3) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 6000);
+    }
+}
+
+</script>
+
+</body>
+</html>
